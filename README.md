@@ -10,9 +10,9 @@
 ---
 
 ## 👥 Authors & Project Information
-- **Student Name:** Dhruv U
-- **SRN / Roll Number:** PES2UG24AM054
-- **Department:** Department of Computer Science & Engineering
+- **Team Members:**
+  - **Dhruv U** — SRN: `PES2UG24AM054`
+  - **Yashas** — SRN: `PES2UG24AM810`
 - **Course:** Machine Learning Mini-Project
 
 ---

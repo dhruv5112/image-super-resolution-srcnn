@@ -130,9 +130,9 @@ def create_poster():
     c.drawCentredString(1095, 1342, "CS229 Machine Learning • Deep Learning Reproduction & Residual Enhancement")
 
     # Author Line
-    c.setFont("Helvetica", 16.5)
-    c.setFillColor(colors.HexColor("#444444"))
-    c.drawCentredString(1095, 1308, "Dhruv U (SRN: PES2UG24AM054) – Department of Computer Science & Engineering, PES University")
+    c.setFont("Helvetica-Bold", 17.5)
+    c.setFillColor(colors.HexColor("#3A3A3A"))
+    c.drawCentredString(1095, 1307, "Dhruv U (SRN: PES2UG24AM054) and Yashas (SRN: PES2UG24AM810)")
 
     # -------------------------------------------------------------
     # HELPER: DRAW CARD WITH CRIMSON BANNER

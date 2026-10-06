@@ -2,8 +2,7 @@
 ## Image Super-Resolution Via a Convolutional Neural Network (SRCNN)
 
 **Course:** Machine Learning Mini-Project  
-**Author / Candidate:** Dhruv U (SRN: PES2UG24AM054)  
-**Department:** Department of Computer Science & Engineering  
+**Authors / Candidates:** Dhruv U (SRN: PES2UG24AM054) & Yashas (SRN: PES2UG24AM810)  
 **Academic Reference:** Stanford University CS229 (Garber, Grossman, Johnson-Yu, 2020) & Chao Dong et al. (IEEE TPAMI 2016)
 
 ---

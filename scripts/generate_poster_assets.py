@@ -43,26 +43,26 @@ def generate_academic_seal():
     ax.add_patch(circle_inner)
 
     # Circular text around border
-    # Top arc text: "PES UNIVERSITY • BENGALURU"
-    top_text = "PES UNIVERSITY • BENGALURU"
+    # Top arc text: "IMAGE SUPER-RESOLUTION • CS229"
+    top_text = "IMAGE SUPER-RESOLUTION • CS229"
     n_top = len(top_text)
     for i, ch in enumerate(top_text):
-        angle = np.pi/2 + (n_top/2 - i) * 0.10
+        angle = np.pi/2 + (n_top/2 - i) * 0.09
         x = 0.87 * np.cos(angle)
         y = 0.87 * np.sin(angle)
         rot = np.degrees(angle) - 90
-        ax.text(x, y, ch, fontsize=12, fontweight='bold', color="#8C1515",
+        ax.text(x, y, ch, fontsize=11, fontweight='bold', color="#8C1515",
                 ha='center', va='center', rotation=rot)
 
-    # Bottom arc text: "MACHINE LEARNING • ESTD 1988"
-    bot_text = "MACHINE LEARNING • ESTD 1988"
+    # Bottom arc text: "MACHINE LEARNING RESEARCH"
+    bot_text = "MACHINE LEARNING RESEARCH"
     n_bot = len(bot_text)
     for i, ch in enumerate(bot_text):
-        angle = -np.pi/2 - (n_bot/2 - i) * 0.09
+        angle = -np.pi/2 - (n_bot/2 - i) * 0.095
         x = 0.87 * np.cos(angle)
         y = 0.87 * np.sin(angle)
         rot = np.degrees(angle) + 90
-        ax.text(x, y, ch, fontsize=11, fontweight='bold', color="#8C1515",
+        ax.text(x, y, ch, fontsize=10.5, fontweight='bold', color="#8C1515",
                 ha='center', va='center', rotation=rot)
 
     # Inner Emblem: Neural network + Book / Star motif
@@ -70,7 +70,7 @@ def generate_academic_seal():
     ax.text(0, 0.16, "SRCNN", fontsize=20, fontweight='black', color="#FFFFFF", ha='center', va='center')
     ax.text(0, -0.06, "DEEP LEARNING", fontsize=11, fontweight='bold', color="#D4AF37", ha='center', va='center')
     ax.text(0, -0.26, "SUPER RESOLUTION", fontsize=9, fontweight='semibold', color="#FFFFFF", ha='center', va='center')
-    ax.text(0, -0.48, "PES2UG24AM054", fontsize=10, fontweight='bold', color="#D4AF37", ha='center', va='center')
+    ax.text(0, -0.48, "NEURAL NETWORK", fontsize=10, fontweight='bold', color="#D4AF37", ha='center', va='center')
 
     seal_path = ASSETS_DIR / "poster_seal.png"
     plt.savefig(seal_path, bbox_inches='tight', transparent=True, dpi=300)

@@ -1,15 +1,14 @@
 # Final Presentation Slide Deck Outline
 ## Project: Image Super-Resolution Via a Convolutional Neural Network (SRCNN)
 **Course:** Machine Learning Mini-Project  
-**Team Members:** [Student Name(s) / Roll Numbers / PES2UG24AM054]  
-**Advisor / Faculty:** Department of Computer Science & Engineering  
+**Team Members:** Dhruv U (SRN: PES2UG24AM054), Yashas (SRN: PES2UG24AM810)  
 
 ---
 
 ### Slide 1: Title Slide
 - **Title:** Single-Image Super-Resolution Via a Convolutional Neural Network (SRCNN)
 - **Subtitle:** Deep Learning-Based Reconstruction of Degraded High-Resolution Imagery
-- **Presenter:** [Student Name(s) / PES2UG24AM054]
+- **Presenters:** Dhruv U (SRN: PES2UG24AM054) & Yashas (SRN: PES2UG24AM810)
 - **Date & Context:** Academic Year 2024–2026 | College Mini-Project Defense
 - **Key Visual:** Side-by-side thumbnail showing low-resolution input vs SRCNN enhanced output.
 
