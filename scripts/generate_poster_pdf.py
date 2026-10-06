@@ -115,24 +115,21 @@ def create_poster():
     c.setLineWidth(1.0)
     c.roundRect(30, 1285, 2101, 135, 6, fill=1, stroke=1)
 
-    # Academic Seal (Left)
-    seal_path = str(ASSETS_DIR / "poster_seal.png")
-    c.drawImage(seal_path, 48, 1292, width=120, height=120, mask='auto')
-
-    # Main Title
+    # Main Title (Centered across full header width)
+    header_cx = 30 + 2101 / 2.0  # 1080.5 pt
     c.setFillColor(TEXT_CHARCOAL)
     c.setFont("Helvetica-Bold", 38)
-    c.drawCentredString(1095, 1378, "Image Super-Resolution Via a Convolutional Neural Network")
+    c.drawCentredString(header_cx, 1378, "Image Super-Resolution Via a Convolutional Neural Network")
 
     # Subtitle
     c.setFont("Helvetica", 24)
     c.setFillColor(colors.HexColor("#333333"))
-    c.drawCentredString(1095, 1342, "CS229 Machine Learning • Deep Learning Reproduction & Residual Enhancement")
+    c.drawCentredString(header_cx, 1342, "CS229 Machine Learning • Deep Learning Reproduction & Residual Enhancement")
 
     # Author Line
     c.setFont("Helvetica-Bold", 17.5)
     c.setFillColor(colors.HexColor("#3A3A3A"))
-    c.drawCentredString(1095, 1307, "Dhruv U (SRN: PES2UG24AM054) and Yashas (SRN: PES2UG24AM810)")
+    c.drawCentredString(header_cx, 1307, "Dhruv U (SRN: PES2UG24AM054) and Yashas (SRN: PES2UG24AM810)")
 
     # -------------------------------------------------------------
     # HELPER: DRAW CARD WITH CRIMSON BANNER
@@ -352,37 +349,53 @@ def create_poster():
 
     # Fig 7 Qualitative Image
     fig7_path = str(ASSETS_DIR / "poster_fig7_results.png")
-    fig7_w, fig7_h = 650, 420
-    fig7_y = res_y + 205
+    fig7_w, fig7_h = 650, 415
+    fig7_y = res_y + 215
     c.drawImage(fig7_path, col3_x + (col_w - fig7_w)/2, fig7_y, width=fig7_w, height=fig7_h, mask='auto')
 
+    # Fig 7 Caption
     p_fig7_cap = Paragraph("<b>Figure 7: SRCNN inputs (left), predictions (center), targets (right)</b>", caption_style)
     p_fig7_cap.wrapOn(c, col_w - 28, 20)
-    p_fig7_cap.drawOn(c, col3_x + 14, fig7_y - 18)
+    p_fig7_cap.drawOn(c, col3_x + 14, fig7_y - 20)
 
     # Results Callout Box matching reference
     callout_y = res_y + 16
-    callout_h = 165
+    callout_h = 162
+    callout_w = col_w - 28
+    callout_x = col3_x + 14
     c.setFillColor(CARDINAL_LIGHT)
     c.setStrokeColor(CARDINAL_RED)
     c.setLineWidth(1.5)
-    c.roundRect(col3_x + 14, callout_y, col_w - 28, callout_h, 4, fill=1, stroke=1)
+    c.roundRect(callout_x, callout_y, callout_w, callout_h, 5, fill=1, stroke=1)
 
+    # Callout Title
     c.setFillColor(CARDINAL_RED)
     c.setFont("Helvetica-Bold", 14)
-    c.drawString(col3_x + 28, callout_y + callout_h - 26, "SRCNN sharpens edges and adds naturalistic detail")
+    c.drawString(callout_x + 16, callout_y + callout_h - 22, "SRCNN sharpens edges and adds naturalistic detail")
+
+    callout_bullet_style = ParagraphStyle(
+        'CalloutBullet',
+        parent=styles['Normal'],
+        fontName='Helvetica',
+        fontSize=11.5,
+        leading=15.5,
+        textColor=TEXT_CHARCOAL,
+        leftIndent=14,
+        firstLineIndent=-10,
+        alignment=TA_LEFT
+    )
 
     results_bullets = [
         "&bull; <b>High-frequency edge sharpness:</b> Res-SRCNN effectively restores edge definition and fine structural details that appear blurred in bicubic upsampling.",
         "&bull; <b>Artifact suppression:</b> Residual skip connection stabilizes color fidelity and eliminates pixelation or color wash observed in standard SRCNN under limited epochs.",
         "&bull; <b>Quantitative superiority:</b> Achieves statistically significant <b>+0.83 dB PSNR</b> and <b>+0.0192 SSIM</b> gain over the traditional bicubic baseline."
     ]
-    cur_y = callout_y + callout_h - 36
+    cur_y = callout_y + callout_h - 38
     for b in results_bullets:
-        p_b = Paragraph(b, bullet_style)
-        _, h_b = p_b.wrap(col_w - 56, 80)
-        p_b.drawOn(c, col3_x + 28, cur_y - h_b + 12)
-        cur_y -= (h_b + 6)
+        p_b = Paragraph(b, callout_bullet_style)
+        _, h_b = p_b.wrap(callout_w - 32, 80)
+        p_b.drawOn(c, callout_x + 16, cur_y - h_b)
+        cur_y -= (h_b + 7)
 
     # Card 3.3: Future Work
     fut_y, fut_h = 25, 234
