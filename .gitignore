@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cpython cache
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Large datasets (DIV2K raw downloads)
+data/raw/
+data/*.zip
+data/DIV2K_*/
+data/DIV2K_100/
+
+# Scratch & temporary workspace
+scratch/
+*.tmp
+*.swp
+
+# Model checkpoints (allow best_srcnn.keras)
+models/*.ckpt
+models/*.h5.tmp
