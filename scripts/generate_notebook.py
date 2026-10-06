@@ -812,25 +812,25 @@ This cell provides an inference pipeline for testing any arbitrary image without
     m_ssim = compute_ssim(hr_np, sr_np)
     gain = m_psnr - b_psnr
     
-    fig, axes = plt.subplots(1, 4, figsize=(18, 5))
+    fig, axes = plt.subplots(1, 4, figsize=(18, 5.2), dpi=300)
     axes[0].imshow(lr_np)
-    axes[0].set_title("Degraded Input\\n(2x Downscaled)", fontsize=11)
+    axes[0].set_title("Degraded Input\\n(2x Downscaled)", fontsize=11, pad=10)
     axes[0].axis("off")
     
     axes[1].imshow(lr_np)
-    axes[1].set_title(f"Bicubic Baseline\\nPSNR: {b_psnr:.2f} dB | SSIM: {b_ssim:.4f}", fontsize=11)
+    axes[1].set_title(f"Bicubic Baseline\\nPSNR: {b_psnr:.2f} dB | SSIM: {b_ssim:.4f}", fontsize=11, pad=10)
     axes[1].axis("off")
     
     axes[2].imshow(sr_np)
-    axes[2].set_title(f"SRCNN Enhanced\\nPSNR: {m_psnr:.2f} dB ({gain:+.2f} dB)\\nSSIM: {m_ssim:.4f}", fontsize=11, fontweight="bold", color="darkgreen")
+    axes[2].set_title(f"SRCNN Enhanced\\nPSNR: {m_psnr:.2f} dB ({gain:+.2f} dB) | SSIM: {m_ssim:.4f}", fontsize=11, fontweight="bold", color="darkgreen", pad=10)
     axes[2].axis("off")
     
     axes[3].imshow(hr_np)
-    axes[3].set_title("Ground Truth Target\\n(Reference 224x224)", fontsize=11)
+    axes[3].set_title("Ground Truth Target\\n(Reference 224x224)", fontsize=11, pad=10)
     axes[3].axis("off")
     
-    plt.suptitle("Single Image Super-Resolution Live Demonstration", fontsize=14, fontweight="bold")
-    plt.tight_layout()
+    plt.suptitle("Single Image Super-Resolution Live Demonstration", fontsize=15, fontweight="bold", y=0.98)
+    plt.tight_layout(rect=[0, 0, 1, 0.90])
     plt.savefig(RESULTS_DIR / "demo_output.png", dpi=300, bbox_inches="tight")
     plt.show()
 

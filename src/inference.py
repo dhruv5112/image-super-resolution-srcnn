@@ -74,30 +74,30 @@ def super_resolve_image(
     }
     
     if show_plot or save_path:
-        fig, axes = plt.subplots(1, 4, figsize=(18, 5))
+        fig, axes = plt.subplots(1, 4, figsize=(18, 5.2), dpi=300)
         
         # 1. LR input
         axes[0].imshow(lr_np)
-        axes[0].set_title(f"Degraded Input\n({scale_factor}x Downsampled)", fontsize=11)
+        axes[0].set_title(f"Degraded Input\n({scale_factor}x Downsampled)", fontsize=11, pad=10)
         axes[0].axis("off")
         
         # 2. Bicubic
         axes[1].imshow(lr_np)
-        axes[1].set_title(f"Bicubic Interpolation\nPSNR: {bicubic_psnr:.2f} dB | SSIM: {bicubic_ssim:.4f}", fontsize=11)
+        axes[1].set_title(f"Bicubic Baseline\nPSNR: {bicubic_psnr:.2f} dB | SSIM: {bicubic_ssim:.4f}", fontsize=11, pad=10)
         axes[1].axis("off")
         
         # 3. SRCNN
         axes[2].imshow(sr_np)
-        axes[2].set_title(f"SRCNN Reconstructed\nPSNR: {srcnn_psnr:.2f} dB ({psnr_gain:+.2f} dB)\nSSIM: {srcnn_ssim:.4f}", fontsize=11, fontweight="bold", color="darkgreen")
+        axes[2].set_title(f"SRCNN Enhanced\nPSNR: {srcnn_psnr:.2f} dB ({psnr_gain:+.2f} dB) | SSIM: {srcnn_ssim:.4f}", fontsize=11, fontweight="bold", color="darkgreen", pad=10)
         axes[2].axis("off")
         
         # 4. Ground Truth
         axes[3].imshow(hr_np)
-        axes[3].set_title(f"Ground Truth Reference\n({target_size[0]}x{target_size[1]})", fontsize=11)
+        axes[3].set_title(f"Ground Truth Reference\n({target_size[0]}x{target_size[1]})", fontsize=11, pad=10)
         axes[3].axis("off")
         
-        plt.suptitle("Single Image Super-Resolution Live Demonstration", fontsize=14, fontweight="bold")
-        plt.tight_layout()
+        plt.suptitle("Single Image Super-Resolution Live Demonstration", fontsize=15, fontweight="bold", y=0.98)
+        plt.tight_layout(rect=[0, 0, 1, 0.90])
         
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches="tight")
