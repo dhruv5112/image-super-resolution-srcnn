@@ -178,6 +178,8 @@ image-super-resolution-srcnn/
 │   ├── download_dataset.py            # Automated DIV2K downloader & cropper
 │   ├── train_model.py                 # Standalone model training CLI
 │   ├── evaluate_model.py              # Baseline benchmark evaluation CLI
+│   ├── generate_poster_assets.py      # Poster figure asset generator
+│   ├── generate_poster_pdf.py         # ReportLab academic poster compiler
 │   └── run_experiments.py             # Master experimental suite runner
 │
 ├── models/
@@ -191,10 +193,14 @@ image-super-resolution-srcnn/
 │   ├── qualitative_comparison.png     # 5 test image visual comparisons
 │   └── demo_output.png                # Live inference demonstration output
 │
+├── assets/
+│   └── poster/                        # High-resolution poster figure assets & preview
+│
 └── docs/
     ├── PROJECT_REPORT.md              # 2-Page college academic project report
     ├── PRESENTATION_CONTENT.md        # 10-Slide presentation deck outline
-    └── VIVA_QUESTIONS.md              # 26 Comprehensive technical viva Q&As
+    ├── VIVA_QUESTIONS.md              # 26 Comprehensive technical viva Q&As
+    └── SRCNN_Research_Poster.pdf      # Publication-ready Stanford CS229 style poster (PDF)
 ```
 
 ---
@@ -203,7 +209,7 @@ image-super-resolution-srcnn/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/dhruv-u/image-super-resolution-srcnn.git
+git clone https://github.com/dhruv5112/image-super-resolution-srcnn.git
 cd image-super-resolution-srcnn
 ```
 
@@ -224,6 +230,12 @@ python3 scripts/download_dataset.py
 python3 scripts/run_experiments.py
 ```
 
+### 5. Generate Academic Research Poster (PDF)
+```bash
+python3 scripts/generate_poster_assets.py
+python3 scripts/generate_poster_pdf.py
+```
+
 ---
 
 ## 🌐 How to Run in Google Colab
@@ -235,6 +247,7 @@ python3 scripts/run_experiments.py
 ---
 
 ## 🎓 Academic Documentation & Defense Materials
+- 🎨 **Academic Research Poster (PDF):** Stanford CS229 layout in [`docs/SRCNN_Research_Poster.pdf`](docs/SRCNN_Research_Poster.pdf) — ready for printing and presentation.
 - 📄 **Project Report:** Full 2-page write-up in [`docs/PROJECT_REPORT.md`](docs/PROJECT_REPORT.md).
 - 📊 **Presentation Slides:** 10-slide outline with scripts in [`docs/PRESENTATION_CONTENT.md`](docs/PRESENTATION_CONTENT.md).
 - ❓ **Viva Preparation:** 26 technical questions & answers in [`docs/VIVA_QUESTIONS.md`](docs/VIVA_QUESTIONS.md).
