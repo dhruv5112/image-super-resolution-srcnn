@@ -41,8 +41,7 @@ def build_notebook():
     cells.append(nbf.v4.new_markdown_cell("""# Image Super-Resolution Via a Convolutional Neural Network (SRCNN)
 
 **Course:** Machine Learning Mini-Project  
-**Author / Candidate:** Dhruv U (SRN: PES2UG24AM054)  
-**Department:** Department of Computer Science & Engineering  
+**Authors / Candidates:** Dhruv U (SRN: PES2UG24AM054) & Yashas (SRN: PES2UG24AM810)  
 **Primary References:**
 1. Stanford University CS229 Project Report (*Garber, Grossman, Johnson-Yu, Spring 2020*): [Report PDF](https://cs229.stanford.edu/proj2020spr/report/Garber_Grossman_Johnson-Yu.pdf) | [Poster PDF](https://cs229.stanford.edu/proj2020spr/poster/Garber_Grossman_Johnson-Yu.pdf)
 2. Chao Dong, Chen Change Loy, Kaiming He, Xiaoou Tang. *Image Super-Resolution Using Deep Convolutional Networks*, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2016.
