@@ -56,26 +56,8 @@ class NumberedCanvas(canvas.Canvas):
         super().save()
 
     def draw_page_decorations(self, total_pages):
-        self.saveState()
-        self.setFont("Helvetica", 8)
-        self.setFillColor(TEXT_MUTED)
-        
-        # Running top header (Page 2 only)
-        if self._pageNumber > 1:
-            self.drawString(40, 762, "Machine Learning Mini-Project — Image Super-Resolution Via SRCNN")
-            self.drawRightString(572, 762, "Dhruv U & Yashas")
-            self.setStrokeColor(BORDER_COLOR)
-            self.setLineWidth(0.6)
-            self.line(40, 756, 572, 756)
-            
-        # Running bottom footer (All pages)
-        self.setStrokeColor(BORDER_COLOR)
-        self.setLineWidth(0.6)
-        self.line(40, 36, 572, 36)
-        
-        self.drawString(40, 25, "PES University • Dept of Computer Science & Engineering • Academic Submission")
-        self.drawRightString(572, 25, f"Page {self._pageNumber} of {total_pages}")
-        self.restoreState()
+        # No running headers or footers on any page
+        pass
 
 
 def generate_pdf():
