@@ -178,6 +178,7 @@ image-super-resolution-srcnn/
 │   ├── download_dataset.py            # Automated DIV2K downloader & cropper
 │   ├── train_model.py                 # Standalone model training CLI
 │   ├── evaluate_model.py              # Baseline benchmark evaluation CLI
+│   ├── generate_report_pdf.py         # 2-Page college submission report compiler
 │   ├── generate_poster_assets.py      # Poster figure asset generator
 │   ├── generate_poster_pdf.py         # ReportLab academic poster compiler
 │   └── run_experiments.py             # Master experimental suite runner
@@ -197,9 +198,8 @@ image-super-resolution-srcnn/
 │   └── poster/                        # High-resolution poster figure assets & preview
 │
 └── docs/
+    ├── Final_Report.pdf               # Submission-ready 2-page academic report (PDF)
     ├── PROJECT_REPORT.md              # 2-Page college academic project report
-    ├── PRESENTATION_CONTENT.md        # 10-Slide presentation deck outline
-    ├── VIVA_QUESTIONS.md              # 26 Comprehensive technical viva Q&As
     └── SRCNN_Research_Poster.pdf      # Publication-ready Stanford CS229 style poster (PDF)
 ```
 
@@ -230,8 +230,9 @@ python3 scripts/download_dataset.py
 python3 scripts/run_experiments.py
 ```
 
-### 5. Generate Academic Research Poster (PDF)
+### 5. Generate Submission Materials (Report & Poster PDFs)
 ```bash
+python3 scripts/generate_report_pdf.py
 python3 scripts/generate_poster_assets.py
 python3 scripts/generate_poster_pdf.py
 ```
@@ -246,11 +247,10 @@ python3 scripts/generate_poster_pdf.py
 
 ---
 
-## 🎓 Academic Documentation & Defense Materials
+## 🎓 Academic Documentation & Submission Materials
+- 📄 **Final Project Report (PDF):** Submission-ready 2-page write-up in [`docs/Final_Report.pdf`](docs/Final_Report.pdf) meeting all rubric requirements (problem statement, dataset details, approach, implementation overview, benchmark results, and conclusions).
 - 🎨 **Academic Research Poster (PDF):** Stanford CS229 layout in [`docs/SRCNN_Research_Poster.pdf`](docs/SRCNN_Research_Poster.pdf) — ready for printing and presentation.
-- 📄 **Project Report:** Full 2-page write-up in [`docs/PROJECT_REPORT.md`](docs/PROJECT_REPORT.md).
-- 📊 **Presentation Slides:** 10-slide outline with scripts in [`docs/PRESENTATION_CONTENT.md`](docs/PRESENTATION_CONTENT.md).
-- ❓ **Viva Preparation:** 26 technical questions & answers in [`docs/VIVA_QUESTIONS.md`](docs/VIVA_QUESTIONS.md).
+- 📝 **Project Report (Markdown):** Text write-up in [`docs/PROJECT_REPORT.md`](docs/PROJECT_REPORT.md).
 
 ---
 
