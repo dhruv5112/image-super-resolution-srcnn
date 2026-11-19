@@ -119,3 +119,13 @@ Visual inspection across test samples shows that:
 
 ### 6. Conclusion
 In this project, we successfully implemented and validated the SRCNN architecture for single-image super-resolution following the Stanford CS229 experimental design. The model demonstrates clear quantitative and perceptual superiority over classical interpolation techniques (Nearest Neighbor, Bilinear, and Bicubic), demonstrating a substantial PSNR gain and notable improvement in structural similarity. The end-to-end pipeline is fully documented, reproducible, and ready for deployment in academic and practical settings.
+
+---
+
+### 7. References
+1. C. Dong, C. C. Loy, K. He, and X. Tang. *Image Super-Resolution Using Deep Convolutional Networks*. IEEE TPAMI, 38(2):295–307, 2016.
+2. D. Garber, E. Grossman, and A. Johnson-Yu. *Image Super-Resolution Via a Convolutional Neural Network*. Stanford CS229 Project Report, Spring 2020.
+3. E. Agustsson and R. Timofte. *NTIRE 2017 Challenge on Single Image Super-Resolution: Dataset and Study*. IEEE CVPRW, 2017.
+4. Z. Wang, A. C. Bovik, H. R. Sheikh, and E. P. Simoncelli. *Image Quality Assessment: From Error Visibility to Structural Similarity*. IEEE TIP, 13(4):600–612, 2004.
+
+**GitHub Repository:** https://github.com/dhruv5112/image-super-resolution-srcnn

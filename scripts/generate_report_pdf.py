@@ -446,7 +446,7 @@ def generate_pdf():
     story.append(Spacer(1, 3))
 
     # 7. References
-    story.append(Paragraph("7. Academic References", sec_heading_style))
+    story.append(Paragraph("7. Academic References &amp; Code Repository", sec_heading_style))
     r1 = "1. C. Dong, C. C. Loy, K. He, and X. Tang. <i>Image Super-Resolution Using Deep Convolutional Networks</i>. IEEE TPAMI, 38(2):295–307, 2016."
     r2 = "2. D. Garber, E. Grossman, and A. Johnson-Yu. <i>Image Super-Resolution Via a Convolutional Neural Network</i>. Stanford CS229 Report, Spring 2020."
     r3 = "3. E. Agustsson and R. Timofte. <i>NTIRE 2017 Challenge on Single Image Super-Resolution: Dataset and Study</i>. IEEE CVPRW, 2017."
@@ -454,6 +454,23 @@ def generate_pdf():
     
     for r in [r1, r2, r3, r4]:
         story.append(Paragraph(r, bullet_style))
+
+    # GitHub Repository Link Box
+    story.append(Spacer(1, 3))
+    github_p = (
+        "<b>GitHub Repository:</b> "
+        "<font color='#1A365D'><u>https://github.com/dhruv5112/image-super-resolution-srcnn</u></font>"
+    )
+    github_table = Table([[Paragraph(github_p, body_style)]], colWidths=[540])
+    github_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, -1), BG_LIGHT),
+        ('BOX', (0, 0), (-1, -1), 0.6, SECONDARY),
+        ('TOPPADDING', (0, 0), (-1, -1), 3),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 3),
+        ('LEFTPADDING', (0, 0), (-1, -1), 6),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 6),
+    ]))
+    story.append(github_table)
 
     # Build document with custom two-pass NumberedCanvas
     doc.build(story, canvasmaker=NumberedCanvas)
